@@ -1,0 +1,15 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<p><a href ="https://www.bmw.ru/" target="_blank"> <img src="{% static 'app/content/logoo.png' %}" alt="Logo 1"/></a> - <big>Немецкий производитель, BMW</big>
+</p>
+<p><a href ="https://www.mercedes-benz.ru/" target="_blank"> <img src="{% static 'app/content/mblogo.png' %}" alt="Logo 1"/></a> - <big>Немецкий производитель, Mercedes Benz</big>
+</p>
+<p><a href ="https://www.michelin.ru/" target="_blank"> <img src="{% static 'app/content/Michelin.png' %}" alt="Logo 1"/></a> - <big>Передовой производитель шин для всех классов автомобилей, Michelin</big>
+</p>
+{% endblock %}
