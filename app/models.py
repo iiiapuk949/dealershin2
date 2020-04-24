@@ -30,10 +30,11 @@ class Blog(models.Model):
         ordering = ["-posted"]  #порядок сортировки данных в модели ( - значит по убыванию)
         verbose_name = "статья блога"  #имя, под которым модель будет отбражаться в административном разделе
         verbose_name_plural = "статья блога"   #тоже для всех статей блога
+admin.site.register(Blog)
 
 class Comment(models.Model):
     text = models.TextField(verbose_name = "Комментарий")
-    date = models.DateTimeField(default = datetime.now(), db_index = True, verbose_name = "Дата")
+    date = models.DateTimeField(default = datetime.now(),db_index = True, verbose_name = "Дата")
     author = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = "Автор")
     post = models.ForeignKey(Blog, on_delete = models.CASCADE, verbose_name = "Статья")
 
@@ -46,4 +47,4 @@ class Comment(models.Model):
         verbose_name_plural = "Комментарии к статьям блога"
         ordering = ["-date"]
 
-admin.site.register(Blog)
+admin.site.register(Comment)
